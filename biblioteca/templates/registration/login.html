@@ -5,15 +5,23 @@
 				<div id="main">
 					<div class="container">
 						<div class="row main-row">
-							<div class="col-12">
+							<div class="col-8 col-12-medium">
 
 								<section>
                                     <form action="{% url 'login' %}" method="post" class="formulario">
-        {% csrf_token %}
-        {{ form.username }}
-        {{ form.password }}
-        <button type="submit">Login</button>
-    </form>
+                                        {% csrf_token %}
+                                        <table>
+                                            <tr>
+                                                <th><label for="id_username">Username:</label></th>
+                                                <td><input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username"></td>
+                                            </tr>
+                                            <tr>
+                                                <th><label for="id_password">Password:</label></th>
+                                                <td><input type="password" name="password" autocomplete="current-password" required id="id_password"></td>
+                                            </tr>
+                                        </table>
+                                        <button type="submit" class="formulario_button">Iniciar sesión</button>
+                                    </form>
                                 </section>
 
 							</div>

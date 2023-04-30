@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.db.models import DO_NOTHING
 
 
@@ -7,6 +8,7 @@ class Editorial(models.Model):
     nombre = models.CharField(max_length=100)
     ciudad = models.CharField(max_length=100, blank=True)
     pais = models.CharField(max_length=100, blank=True)
+    user_id = models.ForeignKey(User, on_delete=DO_NOTHING, null=True, verbose_name="usuario")
 
     def __str__(self):
         return self.nombre
@@ -15,6 +17,8 @@ class Editorial(models.Model):
 class Autor(models.Model):
     nombre = models.CharField(max_length=50)
     apellidos = models.CharField(max_length=100)
+    user_id = models.ForeignKey(User, on_delete=DO_NOTHING, null=True, verbose_name="usuario")
+
 
     def __str__(self):
         return self.apellidos + ",  " + self.nombre
@@ -44,6 +48,7 @@ class Publicacion(models.Model):
     autores = models.ManyToManyField(Autor, verbose_name="Autor/es")
     idioma = models.ForeignKey(Idioma, on_delete=DO_NOTHING, null=True, verbose_name="Idioma")  # check the on_delete
     portada = models.ImageField(null=True, blank=True, upload_to="portadas/")
+    user_id = models.ForeignKey(User, on_delete=DO_NOTHING, null=True, verbose_name="usuario")
 
     def __str__(self):
         return self.titulo

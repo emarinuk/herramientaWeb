@@ -1487,13 +1487,13 @@ input, select, textarea {
 			border-top: 0;
 		}
 
-	.button {
+	.button, form.formulario > button {
 		background-image: -moz-linear-gradient(top, #008dad, #007b9d);
 		background-image: -webkit-linear-gradient(top, #008dad, #007b9d);
 		background-image: -ms-linear-gradient(top, #008dad, #007b9d);
 		background-image: linear-gradient(top, #008dad, #007b9d);
 		display: inline-block;
-		padding: 15px 25px 15px 25px;
+		padding: 7px 25px 7px 25px;
 		background-color: #007b9d;
 		border-radius: 10px;
 		/*text-transform: lowercase;*/
@@ -1503,15 +1503,17 @@ input, select, textarea {
 		letter-spacing: -1px;
 		border: solid 1px #006e8b;
 		box-shadow: inset 0px 0px 0px 1px #18a8c8;
+		font-family: 'Ubuntu Condensed', sans-serif;
 	}
 
-		.button:hover {
+		.button:hover, form.formulario > button:hover {
 			background-image: -moz-linear-gradient(top, #1b9fbe, #118eb1);
 			background-image: -webkit-linear-gradient(top, #1b9fbe, #118eb1);
 			background-image: -ms-linear-gradient(top, #1b9fbe, #118eb1);
 			background-image: linear-gradient(top, #1b9fbe, #118eb1);
 			background-color: #118eb1;
 			box-shadow: inset 0px 0px 0px 1px #3ecceb;
+			font-family: 'Ubuntu Condensed', sans-serif;
 		}
 
 /* Header */

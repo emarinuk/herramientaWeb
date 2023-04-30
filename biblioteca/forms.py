@@ -9,13 +9,13 @@ from biblioteca.models import Publicacion
 class FormularioArticulo(forms.ModelForm):
     class Meta:
         model = Publicacion
-        exclude = ["subtitulo", "numero_paginas", "isbn10", "isbn13", "portada"]
+        exclude = ["subtitulo", "numero_paginas", "isbn10", "isbn13", "portada", "user_id"]
 
 
 class FormularioLibro(forms.ModelForm):
     class Meta:
         model = Publicacion
-        exclude = ["numero", "mes_publicacion", "revista", "volumen"]
+        exclude = ["numero", "mes_publicacion", "revista", "volumen", "user_id"]
 
 
 class FormularioNuevoUsuario(UserCreationForm):
