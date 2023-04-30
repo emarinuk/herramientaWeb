@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}CH | Nuevo usuario{% endblock title %}
+{% block content %}
+			<!-- Main -->
+				<div id="main">
+					<div class="container">
+						<div class="row main-row">
+							<div class="col-12">
+
+								<section>
+									<h2>Citation Hub</h2>
+                                    <form method="post" class="formulario">
+                                        {% csrf_token %}
+                                        {% if formulario.non_field_errors %}
+                                            {% for error in formulario.non_field_errors %}
+                                                <div class="field-error">
+                                                    <p>{{error}}</p>
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                        <p>{{ formulario.username }}</p>
+                                        <p>{{formulario.username.errors.as_text}}</p>
+                                        <p>{{ formulario.email }}</p>
+                                        <p>{{formulario.email.errors.as_text}}</p>
+                                        <p>{{ formulario.password1 }}</p>
+                                        <p>{{formulario.password1.errors.as_text}}</p>
+                                        <p>{{ formulario.password2 }}</p>
+                                        <p>{{formulario.password2.errors.as_text}}</p>
+                                        <p><button>Registrar usuario</button></p>
+                                    </form>
+								</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+{% endblock content %}

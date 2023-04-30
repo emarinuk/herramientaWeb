@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}CH | Biblioteca{% endblock title %}
+{% block content %}
+				<div id="main">
+					<div class="container">
+						<div class="row main-row">
+							<div class="col-8 col-12-medium">
+
+								<section>
+									<h2>{{ titulo_pagina }}</h2>
+                                    <form method="post" class="formulario">
+                                    {% csrf_token %}
+                                        <table>
+                                    {{ formulario.as_table }} {# as_table // as_ul+ #}
+                                        </table>
+                                        <input type="Submit" value="Añadir">
+                                    </form>
+                                </section>
+                            </div>
+   							<div class="col-4 col-12-medium">
+                                <section>
+                                    <h2>Acciones</h2>
+									<div>
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<ul class="link-list">
+													<li><a href="/biblioteca/publicacion/nuevo_libro">Añadir libro</a></li>
+													<li><a href="#">Añadir Autor</a></li>
+													<li><a href="#">Añadir Editorial</a></li>
+												</ul>
+											</div>
+											<div class="col-6 col-12-small">
+												<ul class="link-list">
+													<li><a href="/biblioteca/publicacion/nuevo_articulo">Añadir articulo</a></li>
+													<li><a href="#">Dapibus sed mattis blandit</a></li>
+													<li><a href="#">Vitae magna sed dolore</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+                                </section>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+{% endblock content %}
